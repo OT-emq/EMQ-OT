@@ -15,8 +15,8 @@ class DailyPlane extends Model
         'fecha',
         'direccion',
         'codigo',
-        'actividad_id',
-        'trabajador_id',
+        'activity_id',
+        'worker_id',
         'observaciones',
     ];
 

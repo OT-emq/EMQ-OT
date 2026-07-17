@@ -21,8 +21,8 @@ class DailyPlaneFactory extends Factory
             'fecha'=> fake()->date(),
             'direccion'=> fake()->address(),
             'codigo'=> fake()->numberBetween(1000, 9999),
-            'actividad_id'=> fake()->numberBetween(1, 20),
-            'trabajador_id'=> fake()->numberBetween(1, 20),
+            'activity_id'=> fake()->numberBetween(1, 20),
+            'worker_id'=> fake()->numberBetween(1, 20),
             'observaciones'=> fake()->text(),
         ];
     }
