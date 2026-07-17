@@ -30,8 +30,8 @@ class WorkerController extends Controller
     public function update(Request $request, Worker $worker)
     {
         $validated = $request->validate([
-            'nombre' => 'sometimes|required|string|max:255',
-            'apellido' => 'sometimes|required|string|max:255',
+            'name' => 'sometimes|required|string|max:255',
+            'last_name' => 'sometimes|required|string|max:255',
         ]);
 
         $worker->update($validated);

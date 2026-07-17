@@ -15,7 +15,7 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'descripcion' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
         ]);
 
         return Activity::create($validated);
@@ -29,7 +29,7 @@ class ActivityController extends Controller
     public function update(Request $request, Activity $activity)
     {
         $validated = $request->validate([
-            'descripcion' => 'sometimes|required|string|max:255',
+            'description' => 'sometimes|required|string|max:255',
         ]);
 
         $activity->update($validated);

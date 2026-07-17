@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('daily_planes', function (Blueprint $table) {
         $table->id();
-        $table->date('fecha');
-        $table->string('direccion');
-        $table->string('codigo');
+        $table->date('date');
+        $table->string('address');
+        $table->string('code');
         $table->foreignId('activity_id')->constrained('activities')->cascadeOnDelete();
         $table->foreignId('worker_id')->constrained('workers')->cascadeOnDelete();
-        $table->text('observaciones')->nullable();
+        $table->text('observations')->nullable();
         $table->timestamps();
         });
     }

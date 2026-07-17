@@ -18,8 +18,8 @@ class WorkerFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre'=> fake()->firstName(),
-            'apellido' => fake()->lastName()
+            'name'=> fake()->firstName(),
+            'last_name' => fake()->lastName()
         ];
     }
 }

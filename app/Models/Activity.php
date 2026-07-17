@@ -10,7 +10,7 @@ class Activity extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['descripcion'];
+    protected $fillable = ['description'];
 
     public function dailyPlanes(): HasMany
     {

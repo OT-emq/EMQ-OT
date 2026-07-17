@@ -12,12 +12,12 @@ class DailyPlane extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fecha',
-        'direccion',
-        'codigo',
+        'date',
+        'address',
+        'code',
         'activity_id',
         'worker_id',
-        'observaciones',
+        'observations',
     ];
 
     public function activity(): BelongsTo
