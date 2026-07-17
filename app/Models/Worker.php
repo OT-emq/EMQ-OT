@@ -10,7 +10,10 @@ class Worker extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'apellido'];
+    protected $fillable = [
+        'nombre',
+        'apellido'
+    ];
 
     public function dailyPlanes(): HasMany
     {
