@@ -15,9 +15,9 @@ return new class extends Migration
         $table->id();
         $table->date('fecha');
         $table->string('direccion');
-        $table->string('codigo')->unique();
-        $table->foreignId('actividad_id')->constrained('activities')->cascadeOnDelete();
-        $table->foreignId('trabajador_id')->constrained('workers')->cascadeOnDelete();
+        $table->string('codigo');
+        $table->foreignId('activity_id')->constrained('activities')->cascadeOnDelete();
+        $table->foreignId('worker_id')->constrained('workers')->cascadeOnDelete();
         $table->text('observaciones')->nullable();
         $table->timestamps();
         });
