@@ -19,7 +19,7 @@ class ActivityFactory extends Factory
     public function definition(): array
     {
         return [
-            'descripcion'=> fake()->text(),
+            'description'=> fake()->text(),
         ];
     }
 }

@@ -18,12 +18,12 @@ class DailyPlaneFactory extends Factory
     public function definition(): array
     {
         return [
-            'fecha'=> fake()->date(),
-            'direccion'=> fake()->address(),
-            'codigo'=> fake()->numberBetween(1000, 9999),
+            'date'=> fake()->date(),
+            'address'=> fake()->address(),
+            'code'=> fake()->numberBetween(1000, 9999),
             'activity_id'=> fake()->numberBetween(1, 20),
             'worker_id'=> fake()->numberBetween(1, 20),
-            'observaciones'=> fake()->text(),
+            'observations'=> fake()->text(),
         ];
     }
 }

@@ -15,12 +15,12 @@ class DailyPlaneController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'fecha' => 'required|date',
-            'direccion' => 'required|string|max:255',
-            'codigo' => 'required|string|max:255|unique:daily_planes,codigo',
+            'date' => 'required|date',
+            'address' => 'required|string|max:255',
+            'code' => 'required|string|max:255',
             'activity_id' => 'required|exists:activities,id',
             'worker_id' => 'required|exists:workers,id',
-            'observaciones' => 'nullable|string',
+            'observations' => 'nullable|string',
         ]);
 
         return DailyPlane::create($validated);
@@ -34,12 +34,12 @@ class DailyPlaneController extends Controller
     public function update(Request $request, DailyPlane $dailyPlane)
     {
         $validated = $request->validate([
-            'fecha' => 'sometimes|required|date',
-            'direccion' => 'sometimes|required|string|max:255',
-            'codigo' => 'sometimes|required|string|max:255|unique:daily_planes,codigo,' . $dailyPlane->id,
+            'date' => 'sometimes|required|date',
+            'address' => 'sometimes|required|string|max:255',
+            'code' => 'sometimes|required|string|max:255',
             'activity_id' => 'sometimes|required|exists:activities,id',
             'worker_id' => 'sometimes|required|exists:workers,id',
-            'observaciones' => 'nullable|string',
+            'observations' => 'nullable|string',
         ]);
 
         $dailyPlane->update($validated);
