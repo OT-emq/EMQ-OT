@@ -15,6 +15,5 @@ Route::view('/plan-diario', 'pages.plan.index')->name('plan.index');
 
 
 Route::get('/prueba-relaciones', function () {
-    return DailyPlane::with(['worker', 'activity'])->get();
+    return DailyPlane::with(['worker', 'activity', 'workOrders'])->get();
 });
-
