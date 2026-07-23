@@ -9,13 +9,23 @@
         @yield('title')
     </title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        @media print{
+            .no-print{
+                display: none !important
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
+    <nav class="no-print">
         @include('partials.header')
     </nav>
-    <main>
+    <main class="flex justify-center items-center mt-10 mb-50">
         @yield('content')
     </main>
+
+    @stack('scripts')
 </body>
 </html>

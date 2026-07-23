@@ -18,7 +18,7 @@ class WorkOrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'daily_plane_id'=> fake()->numberBetween(1, 20),
+            'daily_plane_id'=> fake()->numberBetween(1, 5),
         ];
     }
 }
