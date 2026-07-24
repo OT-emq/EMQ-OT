@@ -53,6 +53,5 @@ class DailyPlaneController extends Controller
     {
         $dailyPlane->delete();
 
-        return response()->noContent();
     }
 }
