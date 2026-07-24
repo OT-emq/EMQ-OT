@@ -13,6 +13,6 @@ class DailyPlaneSeeder extends Seeder
      */
     public function run(): void
     {
-        DailyPlane::factory()->count(20)->create();
+        DailyPlane::factory()->count(5)->create();
     }
 }

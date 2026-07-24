@@ -9,7 +9,9 @@ class DailyPlaneController extends Controller
 {
     public function index()
     {
-        return DailyPlane::with(['activity', 'worker'])->get();
+        $dps = DailyPlane::all();
+        return view('pages.plan.index', compact('dps'));
+        /* return DailyPlane::with(['activity', 'worker'])->get(); */
     }
 
     public function store(Request $request)

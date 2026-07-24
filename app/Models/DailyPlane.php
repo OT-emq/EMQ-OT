@@ -34,4 +34,8 @@ class DailyPlane extends Model
     {
         return $this->hasMany(WorkOrder::class);
     }
+
+    protected $casts = [
+        'date' => 'date'
+    ];
 }
