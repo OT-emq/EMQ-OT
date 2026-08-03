@@ -9,7 +9,8 @@ class WorkOrderController extends Controller
 {
     public function index()
     {
-        return WorkOrder::with('dailyPlane')->get();
+        $ot = WorkOrder::with('dailyPlane')->first();
+        return view('pages.work_order', compact('ot'));
     }
 
     public function store(Request $request)

@@ -3,7 +3,7 @@
 @section('title', 'plan')
 
 @section('content')
-    <form action="" class="border">
+    <form action="" class="">
         <table class=" border text-center  w-3/4 mx-auto">
             <tr>
                 <td rowspan="2" colspan="2" class="p-10">
