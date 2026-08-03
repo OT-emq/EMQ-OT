@@ -22,7 +22,7 @@
     <nav class="no-print">
         @include('partials.header')
     </nav>
-    <main class="flex justify-center items-center mt-10 mb-50">
+    <main class="flex-1">
         @yield('content')
     </main>
 
