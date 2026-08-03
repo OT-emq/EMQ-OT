@@ -13,14 +13,16 @@
         <p>Versión:    1.0</p>
         <p>Emisión:    15/09/2023</p></td>
     </tr>
-    <tr>
+
+        <tr>
         <td class="border border-black text-[10px]" colspan="2">ORDEN DE TRABAJO N°</td>
-        <td colspan="2" class="text-[10px] text-center">{{-- {{ $workOrder->id }} --}}</td>
+        <td colspan="2" class="text-[10px] text-center">{{$ot->id}}</td>
         <td class="border border-black  text-[10px]">FECHA</td>
-        <td class="border border-black text-[10px] text-center text-gray-500">DD</td>
+        <td class="border border-black text-[10px] text-center text-gray-500">{{ $ot->dailyplane->date }}</td>
         <td class="border border-black text-[10px] text-center text-gray-500" colspan="2">MM</td>
         <td class="border border-black text-[10px] text-center text-gray-500">AAAA</td>
     </tr>
+
     <tr>
         <td class="border border-black text-[10px]" colspan="2">CODIGO DEL USUARIO</td>
         <td colspan="3" class="border border-black  text-[10px]"></td>
