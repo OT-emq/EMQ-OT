@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="display block">
-<table class="table-fixed border-collapse border border-black w-237.5">
+<table class="table-fixed border-collapse border border-black w-237.5 mx-auto">
     <tr class="h-fit">
         <td class="border border-black" colspan="3"> <img src="{{ asset('images/logo-emq.png') }}" class="h-9 mx-auto"> </td> 
         <td class="border border-black text-center text-[10px]" colspan="5"> <p>ACUEDUCTO</p>
@@ -16,9 +16,9 @@
         <td class="border border-black text-[10px]" colspan="2">ORDEN DE TRABAJO N°</td>
         <td colspan="2" class="text-[10px] text-center">{{$ot->id}}</td>
         <td class="border border-black  text-[10px]">FECHA</td>
-        <td class="border border-black text-[10px] text-center text-gray-500">DD</td>
-        <td class="border border-black text-[10px] text-center text-gray-500" colspan="2">MM</td>
-        <td class="border border-black text-[10px] text-center text-gray-500">AAAA</td>
+        <td class="border border-black text-[10px] text-center text-gray-300">DD</td>
+        <td class="border border-black text-[10px] text-center text-gray-300" colspan="2">MM</td>
+        <td class="border border-black text-[10px] text-center text-gray-300">AAAA</td>
     </tr>
 
     <tr>
@@ -50,7 +50,7 @@
     </tr>
 </table>
 
-<table class="border-collapse border border-black w-237.5 mt-0.5">
+<table class="border-collapse border border-black w-237.5 mt-0.5 mx-auto">
     <tr class="h-1">
         <td class="border border-black text-[6px] text-center" colspan="8">MATERIALES UTILIZADOS</td>
     </tr>
@@ -147,7 +147,7 @@
     </tr>
 </table>
 
-<table class="border-collapse border border-black w-237.5 mt-0.5">
+<table class="border-collapse border border-black w-237.5 mt-0.5 mx-auto">
 <tr>
     <td class="border border-black text-[6px] text-center" colspan="6">ACTIVIDADES</td>
 </tr>
@@ -162,6 +162,108 @@
     <td class="border border-black text-[6px]">VISITAS PARA DISPONIBILIDAD DE SERVICIO</td>
     <td class="border border-black text-[6px] w-3"></td>
 </tr>
+<tr>
+    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS ACOMETIDA EN VIA ASFALTO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">INSTALACION DE TUBERIA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">EMPALMES DE REDES DE ACUEDUCTO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS EN VIA TIERRA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">CARGUE DE MATERIAL PARA COBERTURA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">REPARACION DE DAÑOS DE MEDIDOR</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS ACOMETIDA EN VIA CONCRETO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">RETIRO DE ESCOMBROS</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">EFECTUAR PURGA DE REDES DE ACUEDUCTO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ARREGLO DE TUBERIA MADRE EN VIA ASFALTO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">ARREGLO DE TUBERIA MADRE EN CONGLOMERADO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">DETECCION DE FUGAS NOCTURNAS DE RTEDES DE ACUEDUCTO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ARREGLO DE TUBERIA MADRE EN VIA TIERRA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">REPOSICION DE ACOMETIDAS</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">OTRO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px] text-center" colspan="6">LABORES ADICIONALES</td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ACOMPAÑANTE DE TOPOGRAFIA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LAVADO DE TANQUES ALMACENAMIENTO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LAVAR DESARENADO QUITAPEREZA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ALTIMETRIA RURAL</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">RELLENO DE HUECOS</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LIMPIEZA DE BOCATOMA CAMBINDO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">ALTIMETRIA URBANA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">RECOGIDA DE ESCOMBROS</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LIMPIEZA DE BOCATOMA QUITAPEREZA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">PLANIMETRIA RURAL</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">CAJILLAS</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LIMPIEZA DE BOCATOMA DE RIO MONDOMO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">PLANIMETRIA URBANA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LAVAR DESARENADOR CAMBINDO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">OTRO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+<tr>
+    <td class="border border-black text-[6px]">TUBERIA QUITAPEREZA</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]">LAVAR DESARENADOR RIO MONDOMO</td>
+    <td class="border border-black text-[6px] w-3"></td>
+    <td class="border border-black text-[6px]"></td>
+    <td class="border border-black text-[6px] w-3"></td>
+</tr>
+
 </table>
+
+<table class="border-collapse border border-black w-237.5 mt-[1px] mx-auto">
+<tr>
+    <td class="border border-black text-[6px] align-top h-17">OBSERVACIONES</td>
+</tr>
+</table>
+<div class="w-237.5 mx-auto flex mt-5 justify-between">
+<p class="text-[6px] border-t w-59 text-center">FIRMA DEL FUNCIONARIO</p>
+<P class="text-[6px] border-t w-59 text-center">FIRMA RESPONSABLE</P>
+</div>
 </div>
 @endsection
