@@ -10,7 +10,7 @@
                 Trabajadores
             </h1>
 
-            <a href="{{ route('workers.create') }}"
+            <a href=""
                 class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg border border-black font-bold">
                 + Agregar Trabajador
             </a>
@@ -36,24 +36,24 @@
 
                 <tbody>
 
-                    @foreach ($trabajadores as $trabajador)
+                    @forelse ($workers as $worker)
 
                         <tr class="text-center hover:bg-gray-100">
 
-                            <td class="border p-3">{{ $trabajador->id }}</td>
-                            <td class="border p-3">{{ $trabajador->nombre }}</td>
-                            <td class="border p-3">{{ $trabajador->apellido }}</td>
+                            <td class="border p-3">{{ $worker->id }}</td>
+                            <td class="border p-3">{{ $worker->nombre }}</td>
+                            <td class="border p-3">{{ $worker->apellido }}</td>
 
                             <td class="border p-3">
 
                                 <div class="flex justify-center gap-2">
 
-                                    <a href="{{ route('workers.edit', $trabajador->id) }}"
+                                    <a href=""
                                         class="bg-yellow-500 text-white px-4 py-2 rounded">
                                         Editar
                                     </a>
 
-                                    <form action="{{ route('workers.destroy', $trabajador->id) }}"
+                                    <form action=""
                                         method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este trabajador?');">
                                         @csrf
                                         @method('DELETE')
@@ -76,7 +76,7 @@
                                 No hay trabajadores registrados.
                             </td>
                         </tr>
-                    @endif
+                    @endforelse
 
                 </tbody>
 
