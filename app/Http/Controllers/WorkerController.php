@@ -9,7 +9,9 @@ class WorkerController extends Controller
 {
     public function index()
     {
-        return Worker::all();
+        $workers = Worker::all();
+        return view('pages.workers.index', compact('workers'));
+
     }
 
     public function store(Request $request)

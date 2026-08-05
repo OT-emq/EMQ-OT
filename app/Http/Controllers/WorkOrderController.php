@@ -8,10 +8,14 @@ use Illuminate\Http\Request;
 class WorkOrderController extends Controller
 {
     public function index()
-    {
-        $ot = WorkOrder::with('dailyPlane')->first();
-        return view('pages.plan.work_order', compact('ot'));
-    }
+{
+    $ot = WorkOrder::with([
+        'dailyPlane.activity',
+        'dailyPlane.worker'
+    ])->first();
+
+    return view('pages.plan.work_order', compact('ot'));
+}
 
     public function store(Request $request)
     {
@@ -23,9 +27,14 @@ class WorkOrderController extends Controller
     }
 
     public function show(WorkOrder $workOrder)
-    {
-        return $workOrder->load('dailyPlane');
-    }
+{
+    $workOrder->load([
+        'dailyPlane.activity',
+        'dailyPlane.worker'
+    ]);
+
+    return view('pages.plan.work_order', compact('workOrder'));
+}
 
     public function update(Request $request, WorkOrder $workOrder)
     {

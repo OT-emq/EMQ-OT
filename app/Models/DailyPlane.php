@@ -30,9 +30,9 @@ class DailyPlane extends Model
         return $this->belongsTo(Worker::class);
     }
 
-    public function workOrders(): HasMany
+    public function workOrder(): HasOne
     {
-        return $this->hasMany(WorkOrder::class);
+        return $this->hasOne(WorkOrder::class);
     }
 
     protected $casts = [
