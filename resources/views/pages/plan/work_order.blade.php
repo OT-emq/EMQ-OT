@@ -16,33 +16,33 @@
         <td class="border border-black text-[10px]" colspan="2">ORDEN DE TRABAJO N°</td>
         <td colspan="2" class="text-[10px] text-center">{{$ot->id}}</td>
         <td class="border border-black  text-[10px]">FECHA</td>
-        <td class="border border-black text-[10px] text-center text-gray-300">DD</td>
-        <td class="border border-black text-[10px] text-center text-gray-300" colspan="2">MM</td>
-        <td class="border border-black text-[10px] text-center text-gray-300">AAAA</td>
+        <td class="border border-black text-[10px] text-center">{{ $ot->dailyPlane->date->format('d') }}</td>
+        <td class="border border-black text-[10px] text-center" colspan="2">{{ $ot->dailyPlane->date->format('m') }}</td>
+        <td class="border border-black text-[10px] text-center">{{ $ot->dailyPlane->date->format('Y') }}</td>
     </tr>
 
     <tr>
         <td class="border border-black text-[10px]" colspan="2">CODIGO DEL USUARIO</td>
-        <td colspan="3" class="border border-black  text-[10px]"></td>
+        <td colspan="3" class="border border-black  text-[10px]">{{ $ot->dailyPlane->code }}</td>
         <td colspan="4" class="border border-black text-[10px]">NOMBRE DEL USUARIO</td>
     </tr>
     <tr class="h-15">
-        <td colspan="6" class="text-[10px] align-top text-left">DIRECCION</td>
+        <td colspan="6" class="text-[10px] align-top text-left">DIRECCION {{ $ot->dailyPlane->address }}</td>
         <td class="text-[10px] align-top text-left">TELEFONO</td>
     </tr>
     <tr class="h-9">
-        <td colspan="9" class="border border-black text-[10px] align-top text-left">DESCRIPCION DE LA ACTIVIDAD:</td>
+        <td colspan="9" class="border border-black text-[10px] align-top text-left">DESCRIPCION DE LA ACTIVIDAD: {{ $ot->dailyPlane->activity->description }}</td>
     </tr>
     <tr class="h-9">
         <td colspan="5" class="border border-black text-[10px] align-top text-left">EQUIPO UTILIZADO:</td>
         <td colspan="4" class="border border-black text-[10px] align-top text-left">HORAS DE UTILIZACION</td>
     </tr>
     <tr class="h-7">
-        <td colspan="9" class="border border-black text-[10px] align-top text-left">FUNCIONARIOS RESPONSABLES:</td>
+        <td colspan="9" class="border border-black text-[10px] align-top text-left">FUNCIONARIOS RESPONSABLES: {{ $ot->dailyPlane->worker->name }} {{ $ot->dailyPlane->worker->last_name }}</td>
     </tr>
     <tr>
         <td class="border border-black text-[10px]" colspan="2">HORA DE INICIO</td>
-        <td colspan="2" class="text-[10px] text-center">{{-- {{ $workOrder->id }} --}}</td>
+        <td colspan="2" class="text-[10px] text-center"></td>
         <td class="border border-black  text-[10px]">HORA FINAL</td>
         <td colspan="2" class="border border-black text-[10px] text-center text-gray-500"></td>
         <td class="border border-black text-[10px] text-center">TOTAL HORAS</td>
@@ -154,8 +154,8 @@
 <tr>
     <td class="border border-black text-[6px] text-center" colspan="6">AREA ACUEDUCTO</td>
 </tr>
-<tr>
-    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS ACOMETIDA CONGLOMERADO</td>
+<tr class="">
+    <td class="border border-black text-[6px] py-0.5">ARREGLO DE DAÑOS ACOMETIDA CONGLOMERADO</td>
     <td class="border border-black text-[6px] w-3"></td>
     <td class="border border-black text-[6px]">INSTALACION ACOMETIDA</td>
     <td class="border border-black text-[6px] w-3"></td>
@@ -163,7 +163,7 @@
     <td class="border border-black text-[6px] w-3"></td>
 </tr>
 <tr>
-    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS ACOMETIDA EN VIA ASFALTO</td>
+    <td class="border border-black text-[6px] py-0.5">ARREGLO DE DAÑOS ACOMETIDA EN VIA ASFALTO</td>
     <td class="border border-black text-[6px] w-3"></td>
     <td class="border border-black text-[6px]">INSTALACION DE TUBERIA</td>
     <td class="border border-black text-[6px] w-3"></td>
@@ -171,7 +171,7 @@
     <td class="border border-black text-[6px] w-3"></td>
 </tr>
 <tr>
-    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS EN VIA TIERRA</td>
+    <td class="border border-black text-[6px] py-0.5">ARREGLO DE DAÑOS EN VIA TIERRA</td>
     <td class="border border-black text-[6px] w-3"></td>
     <td class="border border-black text-[6px]">CARGUE DE MATERIAL PARA COBERTURA</td>
     <td class="border border-black text-[6px] w-3"></td>
@@ -179,7 +179,7 @@
     <td class="border border-black text-[6px] w-3"></td>
 </tr>
 <tr>
-    <td class="border border-black text-[6px]">ARREGLO DE DAÑOS ACOMETIDA EN VIA CONCRETO</td>
+    <td class="border border-black text-[6px] py-0.5">ARREGLO DE DAÑOS ACOMETIDA EN VIA CONCRETO</td>
     <td class="border border-black text-[6px] w-3"></td>
     <td class="border border-black text-[6px]">RETIRO DE ESCOMBROS</td>
     <td class="border border-black text-[6px] w-3"></td>
@@ -187,7 +187,7 @@
     <td class="border border-black text-[6px] w-3"></td>
 </tr>
 <tr>
-    <td class="border border-black text-[6px]">ARREGLO DE TUBERIA MADRE EN VIA ASFALTO</td>
+    <td class="border border-black text-[6px] py-0.5">ARREGLO DE TUBERIA MADRE EN VIA ASFALTO</td>
     <td class="border border-black text-[6px] w-3"></td>
     <td class="border border-black text-[6px]">ARREGLO DE TUBERIA MADRE EN CONGLOMERADO</td>
     <td class="border border-black text-[6px] w-3"></td>
@@ -195,7 +195,7 @@
     <td class="border border-black text-[6px] w-3"></td>
 </tr>
 <tr>
-    <td class="border border-black text-[6px]">ARREGLO DE TUBERIA MADRE EN VIA TIERRA</td>
+    <td class="border border-black text-[6px] py-0.5">ARREGLO DE TUBERIA MADRE EN VIA TIERRA</td>
     <td class="border border-black text-[6px] w-3"></td>
     <td class="border border-black text-[6px]">REPOSICION DE ACOMETIDAS</td>
     <td class="border border-black text-[6px] w-3"></td>
@@ -258,10 +258,10 @@
 
 <table class="border-collapse border border-black w-237.5 mt-[1px] mx-auto">
 <tr>
-    <td class="border border-black text-[6px] align-top h-17">OBSERVACIONES</td>
+    <td class="border border-black text-[6px] align-top h-17">OBSERVACIONES {{ $ot->dailyPlane->observations }}</td>
 </tr>
 </table>
-<div class="w-237.5 mx-auto flex mt-5 justify-between">
+<div class="w-237.5 mx-auto flex mt-15 justify-between">
 <p class="text-[6px] border-t w-59 text-center">FIRMA DEL FUNCIONARIO</p>
 <P class="text-[6px] border-t w-59 text-center">FIRMA RESPONSABLE</P>
 </div>
