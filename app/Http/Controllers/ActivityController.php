@@ -9,7 +9,12 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        return Activity::all();
+        $activies = Activity::all();
+        return view('pages.activities.index', compact('activies'));
+    }
+
+    public function create(){
+        return view('pages.activities.create');
     }
 
     public function store(Request $request)
@@ -20,7 +25,7 @@ class ActivityController extends Controller
 
         return Activity::create($validated);
     }
-
+    
     public function show(Activity $activity)
     {
         return $activity;

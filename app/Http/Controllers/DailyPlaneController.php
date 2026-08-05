@@ -14,6 +14,10 @@ class DailyPlaneController extends Controller
         /* return DailyPlane::with(['activity', 'worker'])->get(); */
     }
 
+    public function create(){
+        return view('pages.plan.create');
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
