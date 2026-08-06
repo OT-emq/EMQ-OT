@@ -14,31 +14,31 @@
 
         <tr>
         <td class="border border-black text-[10px]" colspan="2">ORDEN DE TRABAJO N°</td>
-        <td colspan="2" class="text-[10px] text-center">{{$ot->id}}</td>
+        <td colspan="2" class="text-[10px] text-center">{{$dailyPlane->id}}</td>
         <td class="border border-black  text-[10px]">FECHA</td>
-        <td class="border border-black text-[10px] text-center">{{ $ot->dailyPlane->date->format('d') }}</td>
-        <td class="border border-black text-[10px] text-center" colspan="2">{{ $ot->dailyPlane->date->format('m') }}</td>
-        <td class="border border-black text-[10px] text-center">{{ $ot->dailyPlane->date->format('Y') }}</td>
+        <td class="border border-black text-[10px] text-center">{{ $dailyPlane->date->format('d') }}</td>
+        <td class="border border-black text-[10px] text-center" colspan="2">{{ $dailyPlane->date->format('m') }}</td>
+        <td class="border border-black text-[10px] text-center">{{ $dailyPlane->date->format('Y') }}</td>
     </tr>
 
     <tr>
         <td class="border border-black text-[10px]" colspan="2">CODIGO DEL USUARIO</td>
-        <td colspan="3" class="border border-black  text-[10px]">{{ $ot->dailyPlane->code }}</td>
+        <td colspan="3" class="border border-black  text-[10px] text-center">{{ $dailyPlane->code }}</td>
         <td colspan="4" class="border border-black text-[10px]">NOMBRE DEL USUARIO</td>
     </tr>
     <tr class="h-15">
-        <td colspan="6" class="text-[10px] align-top text-left">DIRECCION {{ $ot->dailyPlane->address }}</td>
+        <td colspan="6" class="text-[10px] align-top text-left">DIRECCION {{ $dailyPlane->address }}</td>
         <td class="text-[10px] align-top text-left">TELEFONO</td>
     </tr>
     <tr class="h-9">
-        <td colspan="9" class="border border-black text-[10px] align-top text-left">DESCRIPCION DE LA ACTIVIDAD: {{ $ot->dailyPlane->activity->description }}</td>
+        <td colspan="9" class="border border-black text-[10px] align-top text-left">DESCRIPCION DE LA ACTIVIDAD: {{ $dailyPlane->activity->description }}</td>
     </tr>
     <tr class="h-9">
         <td colspan="5" class="border border-black text-[10px] align-top text-left">EQUIPO UTILIZADO:</td>
         <td colspan="4" class="border border-black text-[10px] align-top text-left">HORAS DE UTILIZACION</td>
     </tr>
     <tr class="h-7">
-        <td colspan="9" class="border border-black text-[10px] align-top text-left">FUNCIONARIOS RESPONSABLES: {{ $ot->dailyPlane->worker->name }} {{ $ot->dailyPlane->worker->last_name }}</td>
+        <td colspan="9" class="border border-black text-[10px] align-top text-left">FUNCIONARIOS RESPONSABLES: {{ $dailyPlane->worker->name }} {{ $dailyPlane->worker->last_name }}</td>
     </tr>
     <tr>
         <td class="border border-black text-[10px]" colspan="2">HORA DE INICIO</td>
@@ -258,12 +258,13 @@
 
 <table class="border-collapse border border-black w-237.5 mt-[1px] mx-auto">
 <tr>
-    <td class="border border-black text-[6px] align-top h-17">OBSERVACIONES {{ $ot->dailyPlane->observations }}</td>
+    <td class="border border-black text-[6px] align-top h-17">OBSERVACIONES {{ $dailyPlane->observations }}</td>
 </tr>
 </table>
 <div class="w-237.5 mx-auto flex mt-15 justify-between">
 <p class="text-[6px] border-t w-59 text-center">FIRMA DEL FUNCIONARIO</p>
 <P class="text-[6px] border-t w-59 text-center">FIRMA RESPONSABLE</P>
 </div>
+<p class="text-[4px] text-center mt-5 color">firma</p>
 </div>
 @endsection

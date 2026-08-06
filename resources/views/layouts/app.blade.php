@@ -25,7 +25,7 @@
     <main class="flex-1">
         @yield('content')
     </main>
-    <footer>
+    <footer class="no-print">
         @include('partials.footer')
     </footer>
     @stack('scripts')

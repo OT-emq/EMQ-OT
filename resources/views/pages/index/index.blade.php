@@ -3,6 +3,7 @@
 @section('title', 'inicio')
 
 @section('content')
+
     <div class="bg-sky-500  mx-auto text-center w-fit px-10 rounded-3xl py-10">
         <p class="text-white text-5xl font-bold">
             GESTIÓN PARA LA CREACIÓN DE PLANILLAS
