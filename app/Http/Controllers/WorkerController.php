@@ -11,18 +11,25 @@ class WorkerController extends Controller
     {
         $workers = Worker::all();
         return view('pages.workers.index', compact('workers'));
+    }
 
+    public function create(){
+        return view('pages.workers.create');
     }
 
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
-        ]);
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'last_name' => 'required|string|max:255',
+    ]);
 
-        return Worker::create($validated);
-    }
+    Worker::create($validated);
+
+    return redirect()
+        ->route('trabajadores.index')
+        ->with('success', 'Trabajador creado correctamente.');
+}
 
     public function show(Worker $worker)
     {
@@ -41,10 +48,14 @@ class WorkerController extends Controller
         return $worker;
     }
 
-    public function destroy(Worker $worker)
-    {
-        $worker->delete();
+    public function destroy($id)
+{
+    $worker = Worker::findOrFail($id);
 
-        return response()->noContent();
-    }
+    $worker->delete();
+
+    return redirect()
+        ->route('trabajadores.index')
+        ->with('success', 'Trabajador eliminado correctamente.');
+}
 }
