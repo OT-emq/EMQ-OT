@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DailyPlane;
 use App\Models\WorkOrder;
 use Illuminate\Http\Request;
 
 class WorkOrderController extends Controller
 {
     public function index()
-    {
-        $ot = WorkOrder::with('dailyPlane')->first();
-        return view('pages.work_order', compact('ot'));
-    }
+{
+    $ot = WorkOrder::with([
+        'dailyPlane.activity',
+        'dailyPlane.worker'
+    ])->first();
+
+    return view('pages.plan.work_order', compact('ot'));
+}
 
     public function store(Request $request)
     {
@@ -22,10 +27,16 @@ class WorkOrderController extends Controller
         return WorkOrder::create($validated);
     }
 
-    public function show(WorkOrder $workOrder)
-    {
-        return $workOrder->load('dailyPlane');
-    }
+    public function show(DailyPlane $dailyPlane)
+{
+    $dailyPlane->load([
+        'activity',
+        'worker',
+        'workOrder'
+    ]);
+
+    return view('pages.plan.work_order', compact('dailyPlane'));
+}
 
     public function update(Request $request, WorkOrder $workOrder)
     {

@@ -3,6 +3,32 @@
 @section('title', 'plan')
 
 @section('content')
+<form action="{{ route('plan-diario.index') }}" method="GET" class="flex gap-4 mb-6 mx-auto justify-center">
+
+    <input
+        type="text"
+        name="code"
+        placeholder="Buscar por código"
+        value="{{ request('code') }}"
+        class="border p-2 rounded">
+
+    <input
+        type="date"
+        name="date"
+        value="{{ request('date') }}"
+        class="border p-2 rounded">
+
+    <button class="bg-blue-500 text-white px-4 rounded">
+        Buscar
+    </button>
+
+    <a href="{{ route('plan-diario.index') }}"
+       class="bg-gray-500 text-white px-4 py-2 rounded">
+        Limpiar
+    </a>
+
+</form>
+
     <form action="" class="">
         <table class=" border text-center  w-3/4 mx-auto">
             <tr>
@@ -53,7 +79,8 @@
                 <th class=" border pr-5 pl-5">Observaciones</th>
             </tr>
             @for ($i=0; $i < 10;$i++)
-                <tr class="h-16">
+                <tr class="h-16 cursor-pointer hover:bg-gray-100"
+        ondblclick="window.location='{{ isset($dps[$i]) ? route('work_order.show', $dps[$i]->id) : '#' }}'">
                     <td class="border p-2">
                         {{$dps[$i]->id ?? ''}}
                     </td>

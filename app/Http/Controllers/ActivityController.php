@@ -9,11 +9,12 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        $activies = Activity::all();
-        return view('pages.activities.index', compact('activies'));
+        $activities = Activity::all();
+        return view('pages.activities.index', compact('activities'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('pages.activities.create');
     }
 
@@ -23,9 +24,13 @@ class ActivityController extends Controller
             'description' => 'required|string|max:255',
         ]);
 
-        return Activity::create($validated);
+        Activity::create($validated);
+
+        return redirect()
+            ->route('actividad.index')
+            ->with('success', 'Actividad creada correctamente.');
     }
-    
+
     public function show(Activity $activity)
     {
         return $activity;
@@ -42,10 +47,14 @@ class ActivityController extends Controller
         return $activity;
     }
 
-    public function destroy(Activity $activity)
-    {
-        $activity->delete();
+   public function destroy($id)
+{
+    $activity = Activity::findOrFail($id);
 
-        return response()->noContent();
-    }
+    $activity->delete();
+
+    return redirect()
+        ->route('actividad.index')
+        ->with('success', 'Actividad eliminada correctamente.');
+}
 }

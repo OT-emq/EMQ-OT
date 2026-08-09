@@ -2,20 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\DailyPlane;
+use App\Models\Worker;
 use Illuminate\Http\Request;
 
 class DailyPlaneController extends Controller
 {
-    public function index()
-    {
-        $dps = DailyPlane::all();
-        return view('pages.plan.index', compact('dps'));
-        /* return DailyPlane::with(['activity', 'worker'])->get(); */
+    public function index(Request $request)
+{
+    $query = DailyPlane::with(['activity', 'worker']);
+
+    if ($request->filled('code')) {
+        $query->where('code', 'like', '%' . $request->code . '%');
     }
 
-    public function create(){
-        return view('pages.plan.create');
+    if ($request->filled('date')) {
+        $query->whereDate('date', $request->date);
+    }
+
+    $dps = $query->orderBy('date', 'desc')->get();
+
+    return view('pages.plan.index', compact('dps'));
+}
+    public function create()
+    {
+        $workers = Worker::all();
+        $activities = Activity::all();
+
+        return view('pages.plan.create', compact('workers', 'activities'));
     }
 
     public function store(Request $request)
@@ -29,7 +44,11 @@ class DailyPlaneController extends Controller
             'observations' => 'nullable|string',
         ]);
 
-        return DailyPlane::create($validated);
+        DailyPlane::create($validated);
+
+        return redirect()
+            ->route('plan-diario.index')
+            ->with('success', 'Plan diario creado correctamente.');
     }
 
     public function show(DailyPlane $dailyPlane)
@@ -56,6 +75,5 @@ class DailyPlaneController extends Controller
     public function destroy(DailyPlane $dailyPlane)
     {
         $dailyPlane->delete();
-
     }
 }

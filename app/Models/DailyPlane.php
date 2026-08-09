@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class DailyPlane extends Model
 {
@@ -30,9 +30,9 @@ class DailyPlane extends Model
         return $this->belongsTo(Worker::class);
     }
 
-    public function workOrders(): HasMany
+    public function workOrder(): HasOne
     {
-        return $this->hasMany(WorkOrder::class);
+        return $this->hasOne(WorkOrder::class);
     }
 
     protected $casts = [

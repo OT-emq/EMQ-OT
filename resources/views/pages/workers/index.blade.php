@@ -1,16 +1,14 @@
 @extends('layouts.app')
 @section('content')
-
     <div class="max-w-6xl mx-auto mt-10">
 
         <div class="flex justify-between items-center mb-6">
 
-            <h1
-                class="bg-blue-500 text-white text-4xl rounded-lg px-6 py-3 border border-black font-bold">
+            <h1 class="bg-blue-500 text-white text-4xl rounded-lg px-6 py-3 border border-black font-bold">
                 Trabajadores
             </h1>
 
-            <a href=""
+            <a href="{{ route('trabajadores.create') }}"
                 class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg border border-black font-bold">
                 + Agregar Trabajador
             </a>
@@ -37,30 +35,28 @@
                 <tbody>
 
                     @forelse ($workers as $worker)
-
                         <tr class="text-center hover:bg-gray-100">
 
                             <td class="border p-3">{{ $worker->id }}</td>
-                            <td class="border p-3">{{ $worker->nombre }}</td>
-                            <td class="border p-3">{{ $worker->apellido }}</td>
+                            <td class="border p-3">{{ $worker->name }}</td>
+                            <td class="border p-3">{{ $worker->last_name }}</td>
 
                             <td class="border p-3">
 
                                 <div class="flex justify-center gap-2">
 
-                                    <a href=""
-                                        class="bg-yellow-500 text-white px-4 py-2 rounded">
-                                        Editar
-                                    </a>
+                                    <form action="{{ route('trabajadores.destroy', $worker) }}" method="POST"
+                                        onsubmit="return confirm('¿Eliminar trabajador?')">
 
-                                    <form action=""
-                                        method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este trabajador?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit"
-                                            class="bg-red-600 text-white px-4 py-2 rounded">
+
+                                        <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">
+
                                             Eliminar
+
                                         </button>
+
                                     </form>
 
                                 </div>
