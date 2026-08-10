@@ -4,56 +4,28 @@
 
 @section('content')
 
-    <div class="bg-sky-500  mx-auto text-center w-fit px-10 rounded-3xl py-10">
-        <p class="text-white text-5xl font-bold">
+    <div class="mx-auto w-fit px-10 py-10  rounded-3xl bg-sky-500 text-center">
+        <p class="text-5xl font-bold text-white">
             GESTIÓN PARA LA CREACIÓN DE PLANILLAS
         </p>
 
-        <p class="text-white text-4xl font-bold">
+        <p class="text-4xl font-bold text-white">
             (OTS)
         </p>
         <a href="{{ route('plan-diario.create') }}"
-            class="flex items-center justify-center gap-3 w-fit mx-auto mt-10 border bg-emerald-500 px-8 py-4 rounded-3xl hover:bg-emerald-700">
-            <span class="text-white text-3xl font-bold">Crear planilla</span>
+            class="flex items-center justify-center px-8 py-4 gap-3 mx-auto mt-10 w-fit border rounded-3xl bg-emerald-500  hover:bg-emerald-700 hover:shadow-lg hover:shadow-slate-500 hover:-translate-y-1 transition">
+            <span class="text-3xl font-bold text-white">Crear planilla</span>
         </a>
     </div>
     <div class="mx-auto mt-10 w-fit">
-        <div class="rounded-t-3xl px-10 bg-sky-500 text-center text-white text-3xl font-bold">
+        <div class="px-10 rounded-t-3xl bg-sky-500 text-center text-3xl font-bold text-white">
             PANEL DE INFORMACIÓN
         </div>
-        <div class="flex rounded-b-3xl items-center justify-center gap-20 bg-gray-300 py-10 px-10">
-            <div class="w-fit text-center">
-                <div class="flex gap-3 rounded-t-3xl bg-emerald-500 text-2xl text-white font-bold px-4">
-                    Planes Diarios
-                </div>
-                <div class=" flex items-center justify-center py-2 gap-5 rounded-b-3xl  bg-white text-center">
-                    {{ $dp }}
-                </div>
-            </div>
-            <div class="w-fit text-center">
-                <div class="rounded-t-3xl bg-emerald-500 text-2xl text-white text-center font-bold px-4">
-                    OTS
-                </div>
-                <div class="flex items-center justify-center py-2 gap-5 rounded-b-3xl bg-white text-center">
-                    {{ $wk }}
-                </div>
-            </div>
-            <div class="w-fit text-center">
-                <div class="flex gap-3 rounded-t-3xl bg-emerald-500 text-2xl text-white font-bold px-4">
-                    Actividades
-                </div>
-                <div class=" flex items-center justify-center py-2 gap-5 rounded-b-3xl  bg-white text-center">
-                    {{ $act }}
-                </div>
-            </div>
-            <div class="w-fit text-center">
-                <div class="flex gap-3 rounded-t-3xl bg-emerald-500 text-2xl text-white font-bold px-4">
-                    <span>Trabajadores</span>
-                </div>
-                <div class=" flex items-center justify-center py-2 gap-5 rounded-b-3xl  bg-white text-center">
-                    {{ $wko }}
-                </div>
-            </div>
+        <div class="flex items-center justify-center px-10 py-10 gap-8 rounded-b-3xl bg-blue-50">
+           <x-card-dashboard title="Planes diarios" :value="$dps"/>
+           <x-card-dashboard title="Trabajadores" :value="$wks"/>
+           <x-card-dashboard title="Actividades" :value="$acts"/>
+           <x-card-dashboard title="OTS" :value="$wkos"/>
         </div>
     </div>
 @endsection

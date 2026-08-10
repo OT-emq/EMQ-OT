@@ -4,7 +4,7 @@
 
 <div class="max-w-3xl mx-auto mt-8">
 
-    <h1 class="text-3xl font-bold bg-sky-500 text-white rounded p-4 mb-6">
+    <h1 class="text-3xl font-bold bg-sky-500 text-white  text-center rounded p-4 mb-6">
         Nuevo Plan Diario
     </h1>
 
