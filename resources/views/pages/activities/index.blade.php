@@ -31,7 +31,7 @@
                 <tr>
                     <th class="border p-3">ID</th>
                     <th class="border p-3">Descripción</th>
-                    <th class="border p-3">Acciones</th>
+                    <th class="w-fit border p-3">Acciones</th>
                 </tr>
             </thead>
 

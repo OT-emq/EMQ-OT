@@ -22,7 +22,7 @@ Route::resource('actividad', ActivityController::class);
 Route::resource('orden-de-trabajo', WorkOrderController::class);
 Route::resource('plan-diario', DailyPlaneController::class);
 
-
+Route::view('/prueba-card', 'prueba-cards');
 
 
 /* Route::get('/plan-diario', [DailyPlaneController::class, 'index'])->name('plan.index');*/

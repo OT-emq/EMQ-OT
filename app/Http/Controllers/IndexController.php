@@ -12,11 +12,11 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $dp = DailyPlane::count();
-        $act = Activity::count();
-        $wk= Worker::count();
-        $wko = WorkOrder::count();
+        $dps = DailyPlane::count();
+        $acts = Activity::count();
+        $wks= Worker::count();
+        $wkos = WorkOrder::count();
         
-        return view('pages.index.index', compact('dp','act','wk','wko'));
+        return view('pages.index.index', compact('dps','acts','wks','wkos'));
     }
 }
